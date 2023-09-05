@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='og:viewport' content='width=device-width,initial-scale=1'>
+    <meta name="og:description" content="Skparab1 - Binary search tree">
+    <title>Skparab1 - Binary search tree</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="pacman-favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Finlandica&display=swap" rel="stylesheet"> 
+  </head>
+  <body>
+    <nav id="nav1">
+      <ul class="nav-items navleft">
+        <li class="headername">BST Classification</li>
+      </ul>
+      <ul class="nav-items navcenter" id="nav">
+        <li><a class="larget" id='header2' href="./index.html">Binary Tree Builder</a></li>
+      </ul> 
+      <ul class="nav-items navright">
+        <li title="Settings"><a onclick="openprefs();"><img src="assets/settings.png" height="30px" class="logo"></a></li>
+        <li title="Help"><a onclick="openel('instructions')"><img src="assets/help.png" height="30px" class="logo"></a></li>
+        <li title="Report bug"><a href="https://github.com/skparab1/binarytree/issues/new" target="_blank"><img src="assets/reportbuggy.png" height="30px" class="logo"></a></li>
+      </ul>
+    </nav>
+
+    <div class="fullwidth">
+      <h1 id='head' style="font-size: 50px; color: rgba(0,0,0,0);">e</h1>
+    </div>
+
+    <div id="treeholder">
+
+    </div>
+
+    <div id="connectors">
+
+    </div>
+
+    <div id='res' class="results" style="width: 33%; margin-left: 33%;">
+
+      <h1 style="margin-bottom: 0px;">Settings</h1>
+
+      <h3 style="margin-bottom: 0px;">Max number of levels</h3>
+      <select class='guess' name="numnodes" id="numnodes" onchange="initnums();">
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+      </select>
+
+      <h3 style="margin-bottom: 0px;">Tree type</h3>
+      <select class='guess' name="treetype" id="treetype" onchange="localStorage.setItem('treetype',document.getElementById('treetype').value);">
+        <option value="alpha">Alphabetical</option>
+        <option value="numeric">Numerical</option>
+        <option value="rand">Random</option>
+      </select>
+    </div>
+
+    <div class="clickbuttons">
+      <div class="checkbutton" id='correct' onclick="iscorrect();" style="margin-left: 30%">Is bst</div>
+      <div class="checkbutton" id='wrong' onclick="iswrong();" style="margin-left: 45%; margin-top: -33px;">Not bst</div>
+      <div class="checkbutton" id='next' onclick="location.reload();" style="margin-left: 60%; margin-top: -33px;">Next</div>
+    </div>
+
+    <div class="largenotif" id="solutions">
+      <h1 >Solutions</h1>
+      <h5 id="preordersol">Pre order: </h5>
+      <h5 id="inordersol">In order: </h5>
+      <h5 id="postordersol">Post order: </h5>
+      <div class="close" onclick="closesolutions();">Close</div>
+    </div>
+
+    <div class="wrong" id="wr">
+      <h1 >Wrong!</h1>
+      <h5 id="explanation" style="color: white;">Explanation</h5>
+      <div class="close" onclick="closeel('wr');">Close</div>
+    </div>
+
+    <div class="wrong" id="corr">
+      <h1 >Correct!</h1>
+      <h3 >Good job!</h3>
+      <div class="close" onclick="closeel('corr');">Close</div>
+      <div class="close" onclick="location.reload();">Next</div>
+
+    </div>
+
+    <div class="largenotif" id="instructions">
+      <h1 style='font-size: 25px; margin: 10px;'>How to use</h1>
+      <h5 style='font-size: 15px; margin: 10px;'>1. Evaluate the finary tree to determine whether it is a binary search tree</h5>
+      <h5 style='font-size: 15px; margin: 10px;'>2. Press the corresponding buttons</h5>
+      <div class="close" onclick="closeinstructions();">Close</div>
+    </div>
+
+    <div class="largenotif" id="preferences" style="height: 60%;">
+      <h1 style="font-size: 25px;">Settings</h1>
+      <h3 style="font-size: 15px; margin-bottom: 5px;" id="theme">Theme: (Dark)</h3>
+      <label class="switch" onclick="toggletheme();">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+
+      <h3 style="font-size: 15px; margin-bottom: 5px;" id="lines">Lines: (Cornered)</h3>
+      <label class="switch" onclick="toggleangle();">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+
+      <a href="https://github.com/skparab1/binarytree/issues/new" target="_blank"><div class="close" style="margin-bottom: 10px;">Report bug</div></a>
+
+      <div class="close" onclick="closeprefs();">Close</div>
+    </div>
+    
+    <script src="bst.js"></script>
+
+  </body>
+</html>

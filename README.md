@@ -1,2 +1,2 @@
 # binarytree
-Binary tree thing
+binary tree thing
